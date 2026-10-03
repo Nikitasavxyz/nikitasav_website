@@ -72,8 +72,8 @@ p.ph { position: static; background: none; display: block; }
 .ss:hover .ss-btn::after { opacity: 0.9; }
 
 /* Full-screen gallery */
-.page .blk-image img { cursor: zoom-in; }
-.page .blk-image a img { cursor: pointer; }
+.page:not(.no-zoom) .blk-image img { cursor: zoom-in; }
+.page:not(.no-zoom) .blk-image a img { cursor: pointer; }
 .lb { position: fixed; inset: 0; z-index: 1000; background: #fff; display: flex; align-items: center; justify-content: center; cursor: zoom-out; }
 .lb-frame { position: relative; overflow: hidden; flex: none; }
 .lb-img { position: absolute; max-width: none; cursor: pointer; user-select: none; -webkit-user-select: none; }
