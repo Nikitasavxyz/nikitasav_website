@@ -1,8 +1,10 @@
 /* Site styles. Desktop: everything scales with the window width (like Readymag).
    Phone (up to 800px): blocks stack into a column. */
 :root {
-  /* 1 design pixel: the 1024 x 744 layout is fitted into the window by width and by height, like Readymag did */
-  --px: clamp(0.78px, min(calc(100vw / 1024), calc(100vh / 744)), 2.4px);
+  /* 1 design pixel: the layout is fitted into the window by width (1024) and by height (620), like Readymag did.
+     --zoom is the browser zoom, set by a small script in the page head, so that Cmd +/- still changes the size */
+  --z: var(--zoom, 1);
+  --px: clamp(calc(0.78px * min(var(--z), 1)), min(calc(min(var(--z), 1.38) * 100vw / 1024), calc(var(--z) * 100vh / 620)), calc(2.4px * var(--z)));
   --fpx: max(var(--px), 0.95px);                  /* same for fonts, with a lower bound */
   --colw: calc(711 * var(--px));                  /* content column width */
   --cell: calc(var(--colw) / 47);                 /* one grid unit */
@@ -39,7 +41,7 @@ img { display: block; max-width: 100%; }
 .pg-end { grid-column: 1; pointer-events: none; }
 .crop { position: absolute; inset: 0; overflow: hidden; }
 .blk-image .crop img { inset: auto; max-width: none; object-fit: fill; }
-.blk-video { background: #000; }
+.blk-video { background: none; } /* no black box while a video loads */
 .ph small { display: block; margin-top: 4px; font-size: 11px; opacity: 0.8; }
 .ph { position: absolute; inset: 0; display: grid; place-items: center; background: #f1f1f1; color: #999; font: 12px/1.3 var(--f-nav); text-align: center; }
 p.ph { position: static; background: none; display: block; }

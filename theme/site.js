@@ -101,8 +101,20 @@
       if (img && !img.closest('a')) open(img);
     });
   }
+  // A video stays invisible until it has a picture to show, so there is no black box while it loads
+  function initReveal(el) {
+    if (el.__rv) return; el.__rv = true;
+    var isVideo = el.tagName === 'VIDEO';
+    if (isVideo && el.readyState >= 2) return;
+    var done = false, show = function () { if (done) return; done = true; el.style.opacity = ''; };
+    el.style.transition = 'opacity .35s'; el.style.opacity = '0';
+    if (isVideo) { el.addEventListener('loadeddata', show); el.addEventListener('playing', show); el.addEventListener('error', show); }
+    else el.addEventListener('load', function () { setTimeout(show, 250); });
+    setTimeout(show, isVideo ? 15000 : 8000); // never keep it hidden for good
+  }
   function init(root) {
     (root || document).querySelectorAll('[data-ss]').forEach(initSlideshow);
+    if (!document.body.classList.contains('is-edit')) (root || document).querySelectorAll('.blk-video video, .blk-video iframe').forEach(initReveal);
     if (!document.body.classList.contains('is-edit')) (root || document).querySelectorAll('video[data-hover-sound]').forEach(initVideo);
   }
   window.NSite = { init: init };
