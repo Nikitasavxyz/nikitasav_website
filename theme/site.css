@@ -116,7 +116,7 @@ p.ph { position: static; background: none; display: block; }
   .blk.m-hide, .pg-end { display: none; }
   .blk-image, .blk-video, .blk-slideshow { aspect-ratio: var(--ar); }
   .blk-text, .blk-title { margin: 6px 0; }
-  .t-title { font-size: 18px; line-height: 1.4; }
+  .t-title { font-size: 15px; line-height: 1.4; }
   .t-body { font-size: 14px; line-height: 1.45; }
   .t-meta { font-size: 12px; line-height: 1.45; }
   .t-large { font-size: 14px; line-height: 1.8; }
@@ -126,8 +126,8 @@ p.ph { position: static; background: none; display: block; }
   .a-justify { text-align: left; }
   .home { width: auto; margin: 0 16px; padding-top: calc(var(--hdr) + 8px); }
   .card { margin-bottom: 28px; }
-  .card-t { font-size: 15px; line-height: 1.5; margin-top: 8px; }
-  .card-m { font-size: 12px; line-height: 1.5; }
+  .card-t { font-size: 12.5px; line-height: 1.5; margin-top: 7px; }
+  .card-m { font-size: 10.5px; line-height: 1.5; }
   .ftr { margin-top: 56px; padding-bottom: 32px; font-size: 11px; }
   .ss-btn::after { opacity: 0.9; }
   .lb-prev, .lb-next { top: auto; bottom: 0; }
