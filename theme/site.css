@@ -1,7 +1,8 @@
 /* Site styles. Desktop: everything scales with the window width (like Readymag).
    Phone (up to 800px): blocks stack into a column. */
 :root {
-  --px: clamp(0.78px, calc(100vw / 1024), 2.4px); /* 1 design pixel at a 1024 layout width */
+  /* 1 design pixel: the 1024 x 744 layout is fitted into the window by width and by height, like Readymag did */
+  --px: clamp(0.78px, min(calc(100vw / 1024), calc(100vh / 744)), 2.4px);
   --fpx: max(var(--px), 0.95px);                  /* same for fonts, with a lower bound */
   --colw: calc(711 * var(--px));                  /* content column width */
   --cell: calc(var(--colw) / 47);                 /* one grid unit */
