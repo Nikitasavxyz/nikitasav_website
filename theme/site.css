@@ -27,6 +27,7 @@ img { display: block; max-width: 100%; }
 .hdr-in { width: var(--colw); height: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;
   font: 400 calc(12 * var(--fpx)) / 1.5 var(--f-nav); letter-spacing: -0.2px; padding-bottom: calc(14 * var(--px)); }
 .hdr a { text-decoration: none; color: #000; }
+.hdr-h { margin: 0; font: inherit; }
 .hdr nav { display: flex; gap: calc(28 * var(--px)); }
 .hdr nav a { color: #141414; }
 .hdr nav a.on, .hdr nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
